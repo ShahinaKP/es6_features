@@ -1,0 +1,87 @@
+h2 {
+    position: fixed;
+}
+.col-md-4.float-left {
+    position: fixed;
+    top: 40px; 
+    padding-left: 0;
+    width: 350px;
+}
+
+.col-md-4.float-left ul {
+    padding: 0;
+    list-style: none;
+}
+
+.col-md-4.float-left ul li {
+    padding: 5px;
+    background-color: darkgrey;
+    margin-top: 15px;
+}
+
+.col-md-4.float-left ul li a{
+    cursor: pointer;
+}
+
+.col-md-8.float-right {
+    padding-top: 40px;
+}
+
+pre {
+    color: #fff !important;
+    background-color: black;
+    padding-left: 10px;
+
+}
+
+pre code {
+    white-space: pre-line;
+}
+
+pre code span {
+    font-style: italic;
+    font-weight: 600;
+}
+
+ul.array-list {
+    padding: 10px 0
+}
+
+ul#array-list li,ul#map-list li, 
+ul#foreach-list li, ul#filter-list li {
+    list-style: none;
+    float: left;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 50%;
+    margin-right: 20px;
+    width: 50px;
+    text-align: center;
+    display: none;
+}
+
+.red {
+    background-color: red;
+    display: block !important;
+}
+
+.blue {
+    background-color: blue;
+    display: block !important;
+}
+
+.green {
+    background-color: green;
+    display: block !important;
+}
+
+.grey {
+    background-color: grey;
+    display: block !important;
+}
+
+
+button {
+    cursor: pointer;
+}
+
