@@ -60,24 +60,35 @@ ul#foreach-list li, ul#filter-list li {
     display: none;
 }
 
-.red {
+ul.color-list {
+    display: inline-flex;
+}
+
+ul.color-list li {
+    list-style: none;
+    float: left;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 50%;
+    margin-right: 20px;
+    width: 50px;
+    text-align: center;
+}
+
+ul.color-list.red li{
     background-color: red;
-    display: block !important;
 }
 
-.blue {
+ul.color-list.blue li{
     background-color: blue;
-    display: block !important;
 }
 
-.green {
+ul.color-list.green li{
     background-color: green;
-    display: block !important;
 }
 
-.grey {
+ul.color-list .grey li{
     background-color: grey;
-    display: block !important;
 }
 
 

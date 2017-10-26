@@ -1,45 +1,38 @@
-var colors = [ "red", "green", "blue", "grey" ];
+//For arrow function
+let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-$( document ).ready(function() { 
-    $('#array-list li').each(function (i) {
-        $(this).append(colors[i]);
-    });
-});
-
-foreachClick = () => {
-    colors.forEach(sameColor);
-    $('#foreach-list li').each(function (i) {
-        $(this).append(colors[i]);
-    });
+getNumbersGreater = (key = 0) => {
+    key = $('.number-input').val();
+    $('.number-list').empty();
+    let numbersGreaterKey = numbers.filter(number => number > key);
+    
+    for (let value of numbersGreaterKey) {
+        let item = document.createElement('li');
+        item.appendChild(document.createTextNode(value));
+        $('.number-list').append(item);
+    }
 }
 
+let colors = ["red", "blue", "green"];
+var changeColor;
 sameColor = (val) => {
-    val = "red";
-    console.log(val)
+    return val = changeColor;
+}
+changeColors = (key = 'red') => {
+    changeColor = $('.color-input').val();
+    key = $('.color-input').val();
+    $('.color-list').empty();   
+    let sameColors = colors.map(sameColor);
+    for (let value of sameColors) {
+        let item = document.createElement('li');
+        item.appendChild(document.createTextNode(value));
+        $('.color-list').append(item).addClass(value);
+    }
+    debugger;
 }
 
 
-mapClick = () => {
-    var capitalizedColors = colors.map(changeColor);
-    $('#map-list li').each(function (i) {
-        $(this).append(capitalizedColors[i]).addClass('red');
-    });
-}
-
-changeColor = (val) => {
-    return val = "red";
-}
-
-filterClick = () => {
-    var filterColors = colors.filter(filterColor);
-    $('#map-list li').each(function (i) {
-        $(this).append(filterColors[i]).addClass('red');
-    });
-}
-
-filterColor = (val) => {
-    return val == "red";
-}
 
 
-  
+
+

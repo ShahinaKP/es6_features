@@ -96,8 +96,11 @@
             <div id="feature2">
                 <h4>Arrow Functions</h4>
                 <p>A short hand notation for function(), but it does not bind this in the same way.</p>
+                
                 <pre><code>
-                    <span>How does this work?</span>
+                    const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+                    
+                    <!-- <span>How does this work?</span>
                     var object = {
                         name: "Shahina", 
                         arrowGetName: () => this.name,
@@ -119,8 +122,16 @@
                     object.arrowGetThis() -> [object Window]
                     this -> [object Window]
                     object.regularGetName() -> Shahina
-                    object.regularGetThis() -> {"name":"Shahina"}
+                    object.regularGetThis() -> {"name":"Shahina"} -->
                 </code></pre>
+                <input type="number" class="number-input"/>
+                <button onclick="getNumbersGreater()">Greater numbers</button>
+                <ul class="number-list"></ul>
+
+                <input type="text" class="color-input"/>
+                <button onclick="changeColors()">Change Color</button>
+                <ul class="color-list"></ul>
+
             </div>
             <div id="feature3">
                 <h4>Default function arguments</h4>
