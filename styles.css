@@ -85,3 +85,7 @@ button {
     cursor: pointer;
 }
 
+.col-md-4.float-left ul.es7-features {
+    padding-top: 40px;
+}
+
