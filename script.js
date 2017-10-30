@@ -1,3 +1,9 @@
+$(document).ready (
+    $.getJSON('employees.json', (data) => {
+        employeeData = data;
+    })
+);
+
 //For arrow function
 let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
@@ -32,56 +38,52 @@ changeColors = (key = 'red') => {
 }
 
 var employeeData;
-getFeedEmployees = () => {
-    $.getJSON('employees.json', (data) => {
-        employeeData = data;
-        let names = employeeData.map(key => key.name);
-
-        $('.feed-list').empty();
-        for (let value of names) {
-            let item = document.createElement('li');
-            item.appendChild(document.createTextNode(value));
-            $('.feed-list').append(item);
-        }
-    })
+getFeedEmployees = () => {    
+    let names = employeeData.map(key => key.name);    
+    setEmployeeList(names); 
 }
 
 getFeedSeniorEmployees = () => {
-    $('.feed-list').empty();
     let seniors = employeeData.filter(key => (key.desig == 'Senior Engineer'));
-    let names = seniors.map(key => key.name);
-    
-    for (let value of names) {
-        let item = document.createElement('li');
-        item.appendChild(document.createTextNode(value));
-        $('.feed-list').append(item);
-    }
+    let names = seniors.map(key => key.name);    
+    setEmployeeList(names);  
 }
 
 getFeedLeadEmployees = () => {
-    $('.feed-list').empty();
     let leads = employeeData.filter(key => (key.desig == 'Lead Engineer'));
-    let names = leads.map(key => key.name);
-    
-    for (let value of names) {
-        let item = document.createElement('li');
-        item.appendChild(document.createTextNode(value));
-        $('.feed-list').append(item);
-    }    
+    let names = leads.map(key => key.name);    
+    setEmployeeList(names);      
 }
 
 getFeedAvailableEmployees = () => {
-    $('.feed-list').empty(); 
     let available = employeeData.filter(key => (!key.projects));
     
     let names = available.map(key => key.name);
-    
+    setEmployeeList(names);  
+}
+
+setEmployeeList = (names) => {
+    $('.feed-list').empty();     
     for (let value of names) {
         let item = document.createElement('li');
         item.appendChild(document.createTextNode(value));
         $('.feed-list').append(item);
-    }   
+    } 
 }
+
+removeEmployee = () => {
+    let empName = $('.employee-input').val();
+    var indexOfEmp= employeeData.findIndex(i => i.name == empName);    
+    remove(employeeData, indexOfEmp);
+    console.log(employeeData);
+}
+
+
+const remove = (items,index) => {
+    return [...items.slice(0,index),
+                    ...items.slice(index+1,items.length)];
+};
+  
 
 
 
